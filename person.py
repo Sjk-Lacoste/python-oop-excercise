@@ -10,17 +10,14 @@ class Person:
     def check_interests(interests = []):
         empty_string = ''
         likes = interests
-        i = 0
-        for interest in likes:
-            if not likes[:-1]:
-                empty_string += interest + ' '
+        
+        for count,ele in enumerate(likes):
+            if count == len(likes) - 2:
+                empty_string += ele + ' and '
+            elif count == len(likes) -1:
+                empty_string += ele + ''
             else:
-                if i == len(likes) - 1:
-                    empty_string += 'and ' + interest 
-                else: 
-                    empty_string += interest + ', '
-
-            i += 1
+                empty_string += ele + ', '
         return empty_string
 
     def hello(self):
@@ -29,6 +26,6 @@ class Person:
 
 
 # if __name__ == "__main__":
-#     person = Person('Tshepo', 45, 'male', ['agile', 'strong willed', 'etc'])
+#     person = Person('Tshepo', 45, 'male', ['agile', 'strong willed', 'coding'])
 #     greeting = person.hello()
 #     print(greeting)
